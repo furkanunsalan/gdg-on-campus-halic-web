@@ -1,6 +1,6 @@
 "use client";
 
-import { useParams, useRouter } from "next/navigation";
+import { useParams } from "next/navigation";
 import { events } from "@/data/events";
 import Image from "next/image";
 import { Event } from "@/lib/types";
