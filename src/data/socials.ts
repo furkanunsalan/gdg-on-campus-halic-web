@@ -1,4 +1,8 @@
-const socials = {
+export const campus = "Haliç University"
+
+export const joinLink = "https://forms.gle/TjGF5EWfYWB9aho6A"
+
+export const socials = {
   instagram: {
     url: "https://instagram.com/gdgoncampushalic",
   },
@@ -8,6 +12,7 @@ const socials = {
   github: {
     url: "https://github.com/gdg-on-campus-halic",
   },
+  discord: {
+    url: "https://discord.gg/5e2SSHr9r3",
+  },
 };
-
-export default socials

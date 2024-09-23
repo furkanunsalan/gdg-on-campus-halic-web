@@ -12,9 +12,9 @@ import TeamMemberCard from "@/components/team-member-card";
 import { teamMembers } from "@/data/team";
 import placeholderAvatar from "@/images/team/placeholderAvatar.png";
 import Title from "@/components/title";
-import socials from "@/data/socials";
+import { socials, campus } from "@/data/socials";
 import { icons } from "@/lib/bg-icons";
-import { FaInstagram, FaLinkedin, FaGithub } from "react-icons/fa";
+import { FaInstagram, FaLinkedin, FaGithub, FaDiscord } from "react-icons/fa";
 
 // Generate unique positions based on a grid
 const generateUniquePositions = (count: number) => {
@@ -81,7 +81,7 @@ export default function Home() {
         {renderIcons()}
       </div>
       <div className="relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 my-20">
+        <div className="grid grid-cols-1 xl:grid-cols-2 gap-4 my-20">
           <div className="m-auto w-[80%] md:w-[70%] lg:w-[60%] h-auto my-auto">
             <Image src={banner} alt="gdg-banner" />
             <div className="flex justify-center mt-4 space-x-4">
@@ -109,22 +109,29 @@ export default function Home() {
               >
                 <FaGithub size={48} />
               </a>
+              <a
+                href={socials.discord.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-600 hover:text-blue-800"
+              >
+                <FaDiscord size={48} />
+              </a>
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full md:w-5/6 mt-10">
+          <div className="grid grid-cols-1 md:m-auto lg:m-auto md:grid-cols-2 gap-4 w-full md:w-5/6 mt-10">
             <TextContainer title="Who are we?" variant="red">
-              Welcome to Google Developer Groups on Campus Haliç University —
-              previously known as Google Developer Student Clubs (GDSC). As part
-              of the global Google Developer Groups initiative, we are a vibrant
+              Welcome to Google Developer Groups on Campus {campus}. As part of
+              the global Google Developer Groups initiative, we are a vibrant
               and inclusive community of students passionate about technology,
               innovation, and collaboration.
             </TextContainer>
 
             <TextContainer title="Our Mission" variant="blue">
-              At GDG on Campus Haliç, our mission is to foster a thriving
-              environment where students from all fields—whether they’re
-              seasoned developers or complete beginners—can come together to
+              At Google Developer Groups on Campus {campus}, our mission is to foster a thriving
+              environment where students from all fields-whether they&apos;re
+              seasoned developers or complete beginners-can come together to
               learn, build, and grow.
             </TextContainer>
 
@@ -168,21 +175,20 @@ export default function Home() {
           Our Team
         </Title>
         <div className="flex flex-wrap justify-center items-start py-8 bg-gray-100">
-  {teamMembers.map((member, index) => (
-    <div key={index} className="flex-none w-[240px] mx-4 mb-8"> {/* Add horizontal margin */}
-      <TeamMemberCard
-        avatar={member.avatar ? member.avatar : placeholderAvatar}
-        name={member.name}
-        surname={member.surname}
-        title={member.title}
-        variant={member.variant}
-        linkedinUrl={member.linkedinUrl ?? undefined}
-        instagramUsername={member.instagramUsername ?? undefined}
-      />
-    </div>
-  ))}
-</div>
-
+          {teamMembers.map((member, index) => (
+            <div key={index} className="flex-none w-[240px] mx-4 mb-8">
+              <TeamMemberCard
+                avatar={member.avatar ? member.avatar : placeholderAvatar}
+                name={member.name}
+                surname={member.surname}
+                title={member.title}
+                variant={member.variant}
+                linkedinUrl={member.linkedinUrl ?? undefined}
+                instagramUsername={member.instagramUsername ?? undefined}
+              />
+            </div>
+          ))}
+        </div>
 
         <JoinOurClub />
       </div>

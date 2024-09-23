@@ -73,13 +73,20 @@ export interface TeamMember {
 
 #### socials.ts
 
-Exports a constant named `socials` containing your social media profile URLs for GitHub, LinkedIn, and Instagram. Access them using:
+Exports some constants named `socials`, `campus` and `joinLink`.
+
+- `socials` constant exports your social media links like the following:
 
 ```typescript
 socials.instagram.url
 socials.linkedin.url
 socials.github.url
+socials.discord.url
 ```
+
+- `campus` exports a string with the name of your campus to use on footer and in-between pages.
+
+- `joinLink` exports a string which contains a link for your member application form etc.
 
 ### Image Folder
 
@@ -111,7 +118,7 @@ src/
 
 ## Hosting
 
-After forking this repository and customizing it to fit your needs, you can host the website on Vercel for easy deployment and management.
+After forking this repository and customizing it to fit your needs, you can host the website on [Vercel](https://vercel.com/docs) for easy deployment and management.
 
 ## Contributing
 
