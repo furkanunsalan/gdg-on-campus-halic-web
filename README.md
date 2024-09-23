@@ -1,36 +1,185 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Google Developer Groups on Campus Website Template
 
-## Getting Started
+#### Created by [Furkan Ünsalan](https://github.com/furkanunsalan)
 
-First, run the development server:
+## Contents
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+1. [Introduction](#introduction)
+2. [Requirements](#requirements)
+3. [Usage](#usage)
+   - [Data Folder](#data-folder)
+   - [Image Folder](#image-folder)
+4. [Hosting](#hosting)
+5. [Contributing](#contributing)
+
+## Introduction
+
+This repository contains a website template for Google Developer Groups (GDG) on campus. It provides a customizable framework for showcasing your GDG events, team members, and social media profiles.
+
+## Requirements
+
+This project is built using:
+- Next.js (created with create-next-app)
+- TypeScript
+- shadcn/ui
+
+## Usage
+
+### Data Folder
+
+Modify the files in the `src/data/` folder to customize your website content:
+
+```
+src/
+└── data/
+    ├── events.ts
+    ├── socials.ts
+    └── team.ts
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+#### events.ts
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Contains an array of events with the following type definition:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```typescript
+export interface Event {
+  bannerImage: StaticImageData;
+  images: StaticImageData[];
+  title: string;
+  slug: string;
+  description: string;
+  text: string;
+  date: string;
+  location: string;
+}
+```
 
-## Learn More
+#### team.ts
 
-To learn more about Next.js, take a look at the following resources:
+Contains an array of team members with the following type definition:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```typescript
+export type Variant = 'green' | 'blue' | 'red' | 'yellow';
+export interface TeamMember {
+  avatar?: StaticImageData;
+  name: string;
+  surname: string;
+  title: string;
+  variant: Variant;
+  linkedinUrl?: string;
+  instagramUsername?: string;
+}
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+#### socials.ts
 
-## Deploy on Vercel
+Exports a constant named `socials` containing your social media profile URLs for GitHub, LinkedIn, and Instagram. Access them using:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```typescript
+socials.instagram.url
+socials.linkedin.url
+socials.github.url
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Image Folder
+
+Organize your images in the `src/images/` folder:
+
+```
+src/
+└── images/
+    ├── events/
+    │   ├── event-1/
+    │   │   ├── 1.jpeg
+    │   │   ├── 2.jpeg
+    │   │   └── ...
+    │   ├── event-2/
+    │   │   ├── 1.jpeg
+    │   │   ├── 2.jpeg
+    │   │   └── ...
+    │   └── ...
+    └── team/
+        ├── member-1.jpeg
+        ├── member-2.jpeg
+        └── ...
+```
+
+- The `events` folder contains individual event folders with event images.
+- The `team` folder contains images of your core team members.
+
+**Note:** Currently, you need to manually import each image in `events.ts` and `team.ts`. This process will be improved in a future version to be more dynamic.
+
+## Hosting
+
+After forking this repository and customizing it to fit your needs, you can host the website on Vercel for easy deployment and management.
+
+## Contributing
+
+We welcome contributions to improve this Google Developer Groups on Campus Website Template! Whether you're fixing bugs, adding new features, or improving documentation, your help is appreciated. Here's how you can contribute:
+
+### Getting Started
+
+1. Fork the repository on GitHub
+2. Clone your fork locally:
+   ```
+   git clone https://github.com/gdg-on-campus-halic/gdg-campus-halic-web.git
+   ```
+3. Create a new branch for your feature or bug fix:
+   ```
+   git checkout -b feature/your-feature-name
+   ```
+   or
+   ```
+   git checkout -b fix/your-bug-fix
+   ```
+
+### Making Changes
+
+4. Make your changes in your feature branch
+5. Test your changes thoroughly
+6. Add and commit your changes:
+   ```
+   git add .
+   git commit -m "Your descriptive commit message"
+   ```
+
+### Commit Message Guidelines
+
+- Use the present tense ("Add feature" not "Added feature")
+- Use the imperative mood ("Move cursor to..." not "Moves cursor to...")
+- Limit the first line to 72 characters or less
+- Reference issues and pull requests liberally after the first line
+- Consider starting the commit message with an applicable prefix:
+  - `feat:` for new features
+  - `fix:` for bug fixes
+  - `docs:` for documentation changes
+  - `style:` for changes that do not affect the meaning of the code
+  - `refactor:` for code changes that neither fix a bug nor add a feature
+  - `perf:` for code changes that improve performance
+  - `test:` for adding missing tests or correcting existing tests
+
+### Submitting Changes
+
+7. Push your changes to your fork on GitHub:
+   ```
+   git push origin feature/your-feature-name
+   ```
+8. Create a pull request from your fork to the main repository
+9. In the pull request description, clearly describe the changes and their purpose
+10. Link any relevant issues in the pull request description
+
+### Code Review Process
+
+- The project maintainers will review your pull request
+- They may suggest changes or improvements
+- Make any requested changes by adding new commits to your branch
+- Once approved, your pull request will be merged into the main branch
+
+### Additional Guidelines
+
+- Please ensure your code follows the existing style and includes appropriate documentation
+- For major changes, please open an issue first to discuss the proposed changes
+- Update the README.md with details of changes to the interface, if applicable
+- Increase the version numbers in any examples files and the README.md to the new version that this Pull Request would represent
+
+Thank you for interest in the Google Developer Groups on Campus Website Template!
