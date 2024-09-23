@@ -6,7 +6,7 @@ const NotFoundPage = () => {
           Oops! Page Not Found
         </h2>
         <p className="text-lg text-gray-600 mt-2">
-          Sorry, the page you're looking for does not exist.
+          Sorry, the page you&apos;re looking for does not exist.
         </p>
         <p className="text-lg text-gray-600 mt-2">
           It might have been removed, or the URL might be incorrect.
@@ -19,7 +19,7 @@ const NotFoundPage = () => {
         </a>
         <div className="mt-8">
           <p className="text-sm text-gray-500">
-            If you think that's wrong, checkout <a href="/contact" className="text-blue-500 hover:underline">Github</a>.
+            If you think that&apos;s wrong, checkout <a href="/contact" className="text-blue-500 hover:underline">Github</a>.
           </p>
         </div>
       </div>

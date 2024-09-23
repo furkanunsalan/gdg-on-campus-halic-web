@@ -10,7 +10,6 @@ import JoinOurClub from "@/components/join-our-club";
 
 const EventPage: React.FC = () => {
   const { eventName } = useParams();
-  const router = useRouter();
 
   const getEventByName = (name: string | undefined): Event | null => {
     if (!name) return null;
