@@ -26,7 +26,7 @@ export const events: Event[] = [
     slug: "info-session",
     description: "Our members, both new and returning, gathered to discuss Google technologies, share exciting future projects, play fun games, and enjoy a memorable start to the new semester!",
     text: "At this introductory event, new and existing members came together to explore the world of Google technologies through inspiring conversations. The session included insightful discussions on cutting-edge innovations, practical applications, and future trends in the tech world. In addition to the tech talk, we engaged in interactive games and icebreakers, fostering a lively and welcoming atmosphere. It was a great opportunity for attendees to connect, share ideas, and learn more about the GDG on Campus community and its mission. We also gave participants an exclusive sneak peek into our upcoming projects and events for the semester. Whether it's hackathons, workshops, or collaborative coding sessions, there's a lot to look forward to this year! 🎯Overall, it was an evening filled with knowledge, fun, and a strong sense of community. We are excited for the journey ahead and look forward to growing together as a team. Stay tuned for more amazing events and opportunities to dive deeper into Google technologies! 🌟",
-    date: 'September 16, 2024',
+    date: 'September 27, 2024',
     location: "Haliç University, Café Street"
   }
 ];
