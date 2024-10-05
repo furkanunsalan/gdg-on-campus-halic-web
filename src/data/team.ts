@@ -84,12 +84,6 @@ export const teamMembers: TeamMember[] = [
         variant: "green",
     },
     {
-        name: "Devran",
-        surname: "Duman",
-        title: "Organization Team",
-        variant: "green",
-    },
-    {
         name: "Elif Özge",
         surname: "Bektaş",
         title: "Organization Team",
