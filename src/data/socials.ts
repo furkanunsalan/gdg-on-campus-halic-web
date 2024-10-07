@@ -1,6 +1,6 @@
 export const campus = "Haliç University"
 
-export const joinLink = "https://forms.gle/TjGF5EWfYWB9aho6A"
+export const joinLink = "https://kommunity.com/gdg-on-campus-halic-university/"
 
 export const socials = {
   instagram: {
